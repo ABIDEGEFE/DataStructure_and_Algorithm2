@@ -15,5 +15,12 @@
 - **Time Complexity**: O(n) to access each digit at least once..
 - **Space Complexity**: O(1).
 
+## First Unique Character in a String (LeetCode #387)
+- **Approach**: Use a hash map to count character frequencies, then find the first character with frequency 1.
+- **Time Complexity**: O(n) for two linear passes.
+- **Space Complexity**: O(n) for hash map storage.
+
+
+
 
 
