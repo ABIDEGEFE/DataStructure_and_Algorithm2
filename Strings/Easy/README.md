@@ -24,7 +24,14 @@
 ## String to Integer (atoi) (LeetCode #8) (MEDIUM LEVEL)
 - **Approach**: Build numeric string from digits and sign, handle whitespace and overflow.
 - **Time Complexity**: O(n) for accessing all values at worst case at least once.
-- **Space Complexity** - O(1) 
+- **Space Complexity** - O(1)
+
+  ## Longest Common Prefix (LeetCode #14)
+- **Approach**: Compare characters across strings using the shortest string’s length. O(n*m) time, O(m) space.
+- **Time Complexity**: O(n*m), m is for the length of string with minimum value
+- **Space Complexity**: O(m) 
+
+
 
 
 
