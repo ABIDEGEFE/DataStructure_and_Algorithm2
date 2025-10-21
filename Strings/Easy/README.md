@@ -21,6 +21,13 @@
 - **Space Complexity**: O(n) for hash map storage.
 
 
+## String to Integer (atoi) (LeetCode #8) (MEDIUM LEVEL)
+- **Approach**: Build numeric string from digits and sign, handle whitespace and overflow.
+- **Time Complexity**: O(n) for accessing all values at worst case at least once.
+- **Space Complexity** - O(1) 
+
+
+
 
 
 
