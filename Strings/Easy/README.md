@@ -38,6 +38,13 @@
 - **Space Complexity**: O(1) for in-place string usage.
 
 
+## Ransom Note (LeetCode #383)
+- **Approach**: Use hash map to count ransomNote frequencies, decrement with magazine. O(n+m) time, O(n) space.
+- **Time Complexity**: O(n+m), n for iterating over ransomNote, and m for iterating over maganzine.
+- **Space Complexity**: O(n), to hold the frequency of each character in ransomNote
+
+
+
 
 
 
