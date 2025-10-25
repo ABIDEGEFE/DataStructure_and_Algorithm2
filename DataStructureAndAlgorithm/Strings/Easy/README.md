@@ -38,6 +38,12 @@
 - **Space Complexity**: O(1) for in-place string usage.
 
 
+## Longest Substring Without Repeating Characters (LeetCode #3)
+- **Approach**: Sliding window with hash map to track unique characters. O(n) time, O(n) space.
+- **Time Complexity**: O(n), where n is the length of the input string, due to the amortized linear time (the inner loop can not dominate the outter loop time) of the sliding window and hash map operations.
+- **Space Complexity**: O(n), due to the use of hash map to store the frequency of each items.
+
+
 
 
 
