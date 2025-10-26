@@ -47,7 +47,7 @@
 ## Group Anagrams (LeetCode #49)
 - **Approach**: using hashmap to store anagrams with their unique value
 - **Time Complexity**: O(n*k), inner loop takes O(n) to access each strings once, and the inner loop takes O(k) where k is max(len(strs))
-- **Space Complexity**: O(n), it uses hash map, list, and tuple
+- **Space Complexity**: O(n), it uses hash map. And list and tuples take O(1) since their length is fixed for 26 items.
 
 
 
