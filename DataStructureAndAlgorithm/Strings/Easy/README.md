@@ -44,6 +44,12 @@
 - **Space Complexity**: O(n), due to the use of hash map to store the frequency of each items.
 
 
+## Group Anagrams (LeetCode #49)
+- **Approach**: using hashmap to store anagrams with their unique value
+- **Time Complexity**: O(n*k), inner loop takes O(n) to access each strings once, and the inner loop takes O(k) where k is max(len(strs))
+- **Space Complexity**: O(n), it uses hash map, list, and tuple
+
+
 
 
 
