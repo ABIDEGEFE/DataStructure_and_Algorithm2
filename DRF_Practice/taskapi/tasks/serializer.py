@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User, Group
+from . models import Task, Category
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -17,3 +18,29 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         model = Group
         fields = ['url', 'name']
 
+class TaskSerializer(serializers.HyperlinkedModelSerializer):
+    def check_due_date(value):
+        from datetime import date
+        if value < date.today():
+            raise serializers.ValidationError("Due date cannot be in the past.")
+        return value
+    
+    owner = serializers.HyperlinkedRelatedField(
+        view_name='user-detail',
+        queryset=User.objects.all(),
+        read_only=False
+    )
+    category = serializers.HyperlinkedRelatedField(
+        view_name='category-detail',
+        queryset=Category.objects.all(),
+        read_only=False,
+        allow_null=True
+    )
+    class Meta:
+        model = Task
+        fields = ['url', 'title', 'description', 'owner', 'category', 'due_date']
+
+class CategorySerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Category
+        fields = ['url', 'name', 'description']
