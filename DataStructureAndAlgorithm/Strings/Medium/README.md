@@ -8,3 +8,9 @@
 - **Approach**: using hashmap to store anagrams with their unique value
 - **Time Complexity**: O(n*k), inner loop takes O(n) to access each strings once, and the inner loop takes O(k) where k is max(len(strs))
 - **Space Complexity**: O(n), it uses hash map. And list and tuples take O(1) since their length is fixed for 26 items.
+
+
+## Longest Palindromic Substring (LeetCode #5)
+- **Approach**: Expand around center, O(n²) time. 
+- **Time Complexity**: O(n²)
+- **Space Complexity**: O(n)
