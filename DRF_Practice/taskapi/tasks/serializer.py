@@ -19,11 +19,11 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         fields = ['url', 'name']
 
 class TaskSerializer(serializers.HyperlinkedModelSerializer):
-    def check_due_date(value):
-        from datetime import date
-        if value < date.today():
-            raise serializers.ValidationError("Due date cannot be in the past.")
-        return value
+    # def check_due_date(value):
+    #     from datetime import date
+    #     if value < date.today():
+    #         raise serializers.ValidationError("Due date cannot be in the past.")
+    #     return value
     
     owner = serializers.HyperlinkedRelatedField(
         view_name='user-detail',
@@ -38,7 +38,7 @@ class TaskSerializer(serializers.HyperlinkedModelSerializer):
     )
     class Meta:
         model = Task
-        fields = ['url', 'title', 'description', 'owner', 'category', 'due_date']
+        fields = ['url', 'title', 'description', 'owner', 'category', 'due_date', 'status']
 
 class CategorySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
