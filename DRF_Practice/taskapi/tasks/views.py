@@ -31,9 +31,9 @@ class TaskViewSet(viewsets.ModelViewSet):
     serializer_class = TaskSerializer
     permission_classes = [permissions.IsAuthenticated]
 
-    # def get_queryset(self):
-    #     print('Filtering tasks for user:', self.request.user)
-    #     return super().get_queryset().filter(owner=self.request.user)
+    def get_queryset(self):
+        print('Filtering tasks for user:', self.request.user)
+        return super().get_queryset().filter(owner = self.request.user)
     
     @action(detail=True, methods=['post'])
     def mark_complete(self, request, pk=None):
