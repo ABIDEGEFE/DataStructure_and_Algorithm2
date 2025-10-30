@@ -25,6 +25,11 @@ taskapi/
 
 ---
 
+Flow of the request: 
+
+<img width="611" height="191" alt="FlowDiagram" src="https://github.com/user-attachments/assets/d853d09e-c1ef-47a8-8786-6c9abf45f2bc" />
+
+
 ## Step 1: Environment Setup
 
 ```bash
@@ -304,3 +309,4 @@ urlpatterns = [
 
 **Star this repo if you found it helpful!**  
 Feel free to fork, contribute, or use as a template for your next API project.
+
