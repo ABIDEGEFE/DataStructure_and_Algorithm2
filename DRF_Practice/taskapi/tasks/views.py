@@ -35,6 +35,10 @@ class TaskViewSet(viewsets.ModelViewSet):
         print('Filtering tasks for user:', self.request.user)
         return super().get_queryset().filter(owner = self.request.user)
     
+    def perform_create(self, serializer):
+        print('Creating task for user:', self.request.user)
+        serializer.save(owner=self.request.user)
+    
     @action(detail=True, methods=['post'])
     def mark_complete(self, request, pk=None):
         print('Marking task as complete:', pk)
