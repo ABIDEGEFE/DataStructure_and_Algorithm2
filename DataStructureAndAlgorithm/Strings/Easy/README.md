@@ -37,6 +37,11 @@
 - **Time Complexity**: O(n) at worst case
 - **Space Complexity**: O(1) for in-place string usage.
 
+## Add Binary (LeetCode #67)
+- **Approach 1**: Manual addition with carry and padding. O(n²) time due to string concat.
+- **Approach 2**: Optimized using list + `reversed()`. **O(n) time, O(n) space**.
+- **Key Lesson**: Avoid `str = char + str` in loops → use `list.append()` + `join()`.
+
 
 
 
