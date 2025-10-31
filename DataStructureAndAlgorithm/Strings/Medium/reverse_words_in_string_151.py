@@ -5,20 +5,13 @@ class Solution(object):
         :rtype: str
         """
 
-        s = s.strip()
         words = s.split()
-        space = 0
-        result = []
-        for i in range(len(words)-1, -1, -1):
-            if words[i]:
-                space = 0
+        l, r = 0, len(words)-1
 
-            if not words[i] and space == 1:
-                continue
-            if not words[i]:
-                space = 1
+        while l < r:
+            words[l], words[r] = words[r], words[l]
+            l += 1
+            r -= 1
 
-            result.append(words[i])
-
-        return " ".join(result)
+        return " ".join(words)
         

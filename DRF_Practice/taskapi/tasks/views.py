@@ -27,23 +27,26 @@ class GroupViewSet(viewsets.ModelViewSet):
 
 
 class TaskViewSet(viewsets.ModelViewSet):
+    print('0')
     queryset = Task.objects.all()
+    print('1')
     serializer_class = TaskSerializer
+    print('2')
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
-        print('Filtering tasks for user:', self.request.user)
+        print('Filtering tasks for user:', self.request.user.id)
         return super().get_queryset().filter(owner = self.request.user)
     
     def perform_create(self, serializer):
-        print('Creating task for user:', self.request.user)
         serializer.save(owner=self.request.user)
     
     @action(detail=True, methods=['post'])
     def mark_complete(self, request, pk=None):
         print('Marking task as complete:', pk)
         task = self.get_object()
-        task.status = 'completed'
+        # use the model choice key
+        task.status = 'COMPLETED'
         task.save()
         serializer = self.get_serializer(task)
         return Response(serializer.data)

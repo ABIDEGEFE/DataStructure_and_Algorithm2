@@ -37,8 +37,8 @@ class TaskSerializer(serializers.HyperlinkedModelSerializer):
             raise serializers.ValidationError("Title cannot be empty or whitespace.")
         return value
     
-    owner = UserSerializer(read_only=False)
-    category = CategorySerializer(read_only=False)
+    owner = UserSerializer(read_only=True)
+    category = CategorySerializer(read_only=True, allow_null=True)
     class Meta:
         model = Task
         fields = ['url', 'title', 'description', 'owner', 'category', 'due_date', 'status', 'is_overdue']
