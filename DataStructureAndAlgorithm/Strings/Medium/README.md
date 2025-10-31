@@ -13,4 +13,11 @@
 ## Longest Palindromic Substring (LeetCode #5)
 - **Approach**: Expand around center, O(n²) time. 
 - **Time Complexity**: O(n²)
-- **Space Complexity**: O(n)
+- **Space Complexity**: O(n) 
+
+
+## Reverse Words in a String (LeetCode #151)
+**Approach**: using two pointers to reverse words after reducing all white spaces.
+**Time Complexity**: O(n) where n is the length of words in a list.
+**Space Complexity**: O(n) 
+
