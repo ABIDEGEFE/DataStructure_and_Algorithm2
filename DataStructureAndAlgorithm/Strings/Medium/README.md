@@ -21,10 +21,11 @@
 **Time Complexity**: O(n) where n is the length of words in a list.<br>
 **Space Complexity**: O(n) 
 
-## Simplify Path (LeetCode #71)
-**Approach**: Stack-based parsing
-**Time Complexity**: O(n)
-**Space Complexity**: O(n)
+## Simplify Path (LeetCode #71) 
+**Approach**: Stack-based parsing<br>
+**Time Complexity**: O(n)<br>
+**Space Complexity**: O(n)<br>
+
 
 
 
