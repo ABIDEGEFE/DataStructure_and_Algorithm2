@@ -7,6 +7,12 @@ from asgiref.sync import async_to_sync
 
 class ChatConsumer(WebsocketConsumer):
     def connect(self):
+        user = self.scope["user"]
+        print("Connected user:", user, "Authenticated:", user.is_authenticated)
+        if user.is_anonymous:
+            self.close()
+            return
+        print("WebSocket connected for user:", user)
         self.roome_name = self.scope["url_route"]["kwargs"]["room_name"]
         self.group_name = f"chat_{self.roome_name}"
 

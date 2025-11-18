@@ -124,6 +124,12 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 ASGI_APPLICATION = 'ChatApp.asgi.application'
 
+# Session settings (critical!)
+SESSION_COOKIE_SAMESITE = 'Lax'      # or 'None' if cross-origin
+SESSION_COOKIE_SECURE = False        # True in production (HTTPS)
+SESSION_COOKIE_HTTPONLY = True
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # default
+
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
