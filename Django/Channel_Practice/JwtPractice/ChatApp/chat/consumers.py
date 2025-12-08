@@ -6,6 +6,11 @@ from asgiref.sync import async_to_sync
 
 
 class ChatConsumer(WebsocketConsumer):
+    def __init__(self):
+        self.group_name = None
+        self.room_name = None
+        super().__init__()
+
     def connect(self):
         user = self.scope["user"]
         print("Connected user:", user, "Authenticated:", user.is_authenticated)
@@ -13,18 +18,19 @@ class ChatConsumer(WebsocketConsumer):
             self.close()
             return
         print("WebSocket connected for user:", user)
-        self.roome_name = self.scope["url_route"]["kwargs"]["room_name"]
-        self.group_name = f"chat_{self.roome_name}"
+        self.room_name = self.scope["url_route"]["kwargs"]["room_name"]
+        self.group_name = f"chat_{self.room_name}"
 
         async_to_sync(self.channel_layer.group_add)(
             self.group_name, self.channel_name
         )
         self.accept()
-
+    print('this is inside disconnectttttttttttttttttttttttt')
     def disconnect(self, close_code):
         async_to_sync(self.channel_layer.group_discard)(
             self.group_name, self.channel_name
         )
+        
 
     def receive(self, text_data):
         text_data_json = json.loads(text_data)

@@ -12,13 +12,16 @@
     {{ room_name|json_script:"room-name" }}
     <script>
         const roomName = JSON.parse(document.getElementById('room-name').textContent);
+        const token = localStorage.getItem('access_token')
+        // attach the above token as a query parameter
 
         const chatSocket = new WebSocket(
             'ws://'
             + window.location.host
             + '/ws/chat/'
             + roomName
-            + '/'
+            + '?token=' + token
+
         );
 
         chatSocket.onmessage = function(e) {
