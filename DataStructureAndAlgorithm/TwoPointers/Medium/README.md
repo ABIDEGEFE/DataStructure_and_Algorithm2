@@ -6,4 +6,9 @@
 **Time Complexity**: O(n)<br>
 **Space Complexity**: O(1) 
 
+## 3Sum
+**Time Complexity**: O(n<sup>2</sup>)  
+**Space Complexity**: O(n) python needs O(n) for sorting
+
+
 
