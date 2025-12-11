@@ -8,6 +8,10 @@
 
 ## 3Sum
 **Time Complexity**: O(n<sup>2</sup>)  
+**Space Complexity**: O(n) python needs O(n) for sorting  
+
+## 3Sum Closest
+**Time Complexity**: O(n<sup>2</sup>)  
 **Space Complexity**: O(n) python needs O(n) for sorting
 
 
