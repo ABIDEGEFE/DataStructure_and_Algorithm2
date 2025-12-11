@@ -31,6 +31,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
+    print('he has logged out')
     return redirect('loginPage')
 
 def select_room(request):

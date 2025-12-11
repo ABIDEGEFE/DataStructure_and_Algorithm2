@@ -23,5 +23,11 @@
             window.location.pathname = '/chat/' + roomName + '/';
         };
     </script>
+    <!-- configure the logout button to send a request to the logout view -->
+
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
 </body>
 </html>
